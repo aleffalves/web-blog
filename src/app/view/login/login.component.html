@@ -1,0 +1,64 @@
+<div class="container-login">
+  <div class="card-login">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+      <mat-tab label="Entrar">
+        <div class="container-form-login">
+          <div class="form-login">
+            <div style="display: flex; flex-direction: column; gap: 15px; height: 70%; justify-content: center;">
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <span [style.font-size]="'22px'" [style.font-weight]="700">Login</span>
+                <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                  <mat-icon matPrefix class="prefix-icon">account_circle</mat-icon>
+                  <input matInput type="email" placeholder="Email" [(ngModel)]="login.email">
+                </mat-form-field>
+              </div>
+              <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                <mat-icon matPrefix class="prefix-icon">lock</mat-icon>
+                <input matInput placeholder="Senha" [type]="mostrarSenha ? 'text' : 'password'" [(ngModel)]="login.senha" (keydown.Enter)="logar()">
+                <button mat-icon-button matSuffix style="padding: 0px; margin-right: 8px;"  (click)="mostrarSenha = !mostrarSenha">
+                  <mat-icon style="color: var(--auxiliar); height: 34px; width: 34px; font-size: 34px;" >{{ mostrarSenha ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div style="display: flex; flex-direction: row; height: 30%; align-items: center;">
+              <button class="btn-logar" (click)="logar()">Entrar</button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Cadastre-se">
+        <div class="container-cadastro">
+          <div class="container-form-cadastro">
+            <div style="display: flex; flex-direction: column;">
+              <span [style.font-size]="'12px'" [style.font-weight]="600">Nome</span>
+              <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                <input matInput type="text" placeholder="Nome" [(ngModel)]="usuario.nome">
+              </mat-form-field>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <span [style.font-size]="'12px'" [style.font-weight]="600">Sobrenome</span>
+              <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                <input matInput type="text" placeholder="Sobrenome" [(ngModel)]="usuario.sobrenome">
+              </mat-form-field>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <span [style.font-size]="'12px'" [style.font-weight]="600">Email</span>
+              <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                <input matInput type="email" placeholder="Email" [(ngModel)]="usuario.email">
+              </mat-form-field>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <span [style.font-size]="'12px'" [style.font-weight]="600">Senha</span>
+              <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                <input matInput type="password" placeholder="Senha" [(ngModel)]="usuario.senha">
+              </mat-form-field>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: row; height: 30%; width: 90%; align-items: center;">
+            <button class="btn-logar" (click)="cadastrar()">Cadastrar</button>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

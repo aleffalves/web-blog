@@ -1,0 +1,9 @@
+<button (click)="onClick.emit()" [className]="classe"
+        [style.height]="height" [style.width]="width"
+        [style.background]="background" [style.color]="color"
+        [style.font-weight]="fontWeight" [style.gap]="gap"
+        [style.border]="border">
+  <mat-icon *ngIf="iconePrefix" [style.font-size]="iconeSize" [style.width]="iconeSize" [style.height]="iconeSize" >{{iconePrefix}}</mat-icon>
+  <span *ngIf="texto" [style.font-size]="fontSize">{{texto}}</span>
+  <mat-icon *ngIf="icone" [style.font-size]="iconeSize" [style.width]="iconeSize" [style.height]="iconeSize">{{icone}}</mat-icon>
+</button>

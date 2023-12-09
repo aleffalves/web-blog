@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <span [style.font-size]="'20px'" [style.font-weigth]="'500'">Meu Blog</span>
+  <div *ngIf="estaLogado()" style="display: flex; gap: 5px; gap: 20px; align-items: center;" >
+    <span>{{usuario}}</span>
+    <app-button [classe]="'btn-icon'" [color]="'var(--primary)'" [icone]="'account_circle'" [iconeSize]="'36px'"></app-button>
+    <app-button [classe]="'btn-icon'" [color]="'var(--primary)'" [icone]="'logout'" [iconeSize]="'36px'" (onClick)="logout()"></app-button>
+  </div>
+  <div *ngIf="!estaLogado()" style="display: flex; gap: 5px; gap: 20px; align-items: center;">
+    <app-button [classe]="'btn-salvar'" [color]="'var(--primary-text)'"  [background]="'var(--primary)'" [border]="'var(--primary)'" [texto]="'ENTRAR'" (onClick)="openLogin()"></app-button>
+  </div>
+</mat-toolbar>

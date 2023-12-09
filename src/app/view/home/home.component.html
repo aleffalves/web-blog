@@ -1,0 +1,37 @@
+<div class="container-home">
+
+  <div class="container-titulo">
+    <span>Compartilhe seus pensamentos...</span>
+    <app-button [classe]="'btn-icon'" [icone]="'light_mode'" [iconeSize]="'36px'" [color]="'var(----primary)'"></app-button>
+  </div>
+
+  <mat-divider [style.margin]="'0px 20px'"></mat-divider>
+
+  <div class="container-posts">
+    <div class="add-post">
+      <div class="form">
+        <span [style.font-size]="'14px'" [style.font-weight]="'600'">Titulo</span>
+        <mat-form-field appearance="outline" [style.width]="'50%'">
+          <input matInput type="text" [(ngModel)]="post.titulo">
+        </mat-form-field>
+      </div>
+      <app-editor (valueChange)="setMensagem($event)"></app-editor>
+      <div class="container-btn">
+        <app-button [classe]="'btn-cancelar'" [texto]="'Cancelar'" (onClick)="cancelarPost()"></app-button>
+        <app-button [classe]="'btn-salvar'" [texto]="'Salvar'" (onClick)="salvarPost()"></app-button>
+      </div>
+
+    </div>
+    <div class="add-galery"></div>
+  </div>
+
+  <mat-divider [style.margin]="'0px 20px'"></mat-divider>
+
+  <div class="container-publicacoes">
+    <mat-button-toggle-group>
+      <mat-button-toggle [style.width]="'50%'" value="bold">POSTS</mat-button-toggle>
+      <mat-button-toggle [style.width]="'50%'"  value="italic">ÁLBUNS</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+	<h2 *ngIf="titulo" class="title">{{titulo}}</h2>
+	<div class="content">
+			<div class="editor">
+				<ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+				</ngx-editor-menu>
+				<ngx-editor [editor]="editor" [ngModel]="doc" [placeholder]="'Seus pensamentos aqui...'" (ngModelChange)="onChange($event)" >
+				</ngx-editor>
+			</div>
+	</div>
+</div>
