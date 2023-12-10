@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { toDoc } from 'ngx-editor';
 import { TipoPublicacao } from 'src/app/shared/enums/tipo-publicacao.enum';
+import { ModalFormAlbumComponent } from 'src/app/shared/modais/modal-form-album/modal-form-album.component';
 import { Post } from 'src/app/shared/model/post.model';
+import { AuthService } from 'src/app/shared/service/auth.service';
 import { PostService } from 'src/app/shared/service/post.service';
 
 @Component({
@@ -23,7 +26,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private _snackBar: MatSnackBar,
-    private postService : PostService
+    private postService : PostService,
+    public dialog : MatDialog,
+    private authService : AuthService
   ) { }
 
   ngOnInit() {
@@ -34,7 +39,7 @@ export class HomeComponent implements OnInit {
     this.postService.buscarPosts(page, limit).subscribe({
       next : (posts) => {
         this.posts = posts.content
-        this.totalPages = posts.totalPages as number
+        this.totalPages = (posts.totalPages as number)-1
       }
     })
   }
@@ -69,6 +74,11 @@ export class HomeComponent implements OnInit {
       }
     })
 
+  }
+
+  criarAlbum(){
+    if(!this.authService.isLoggedIn()) return this.openSnackBar('Entre em sua conta ou cadastre-se.', 'ERRO')
+    this.dialog.open(ModalFormAlbumComponent, {data : {}})
   }
 
 }

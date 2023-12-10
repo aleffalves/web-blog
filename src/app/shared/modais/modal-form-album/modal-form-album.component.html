@@ -1,0 +1,21 @@
+<div class="container-album">
+  <div style="display: flex; flex-direction: row; gap: 15px; padding: 30px; align-items: center;">
+    <div class="form" [style.width]="'100%'" >
+      <span [style.font-size]="'14px'" [style.font-weight]="'600'">Nome do Álbum</span>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" [(ngModel)]="album.nome">
+      </mat-form-field>
+    </div>
+    <app-button [classe]="'btn-salvar'" [texto]="'Adicione'" [style.margin-top]="'12px'" [iconePrefix]="'add_a_photo'" [gap]="'5px'" (onClick)="fileInput.click()"></app-button>
+    <input #fileInput accept=".jpg, .png, .jpeg" type="file" multiple (change)="selectFiles($event)" style="display:none;" />
+  </div>
+
+  <div style="display: flex; flex-direction: row; padding: 30px; flex-wrap: wrap; gap: 20px; overflow: auto; justify-content: center;">
+    <img *ngFor="let preview of previews" [src]="preview" class="imagens"/>
+    <div *ngIf="previews?.length" class="container-btn">
+      <app-button [classe]="'btn-cancelar'"  [texto]="'Cancelar'" (onClick)="cancelar()"></app-button>
+      <app-button [classe]="'btn-salvar'"  [texto]="'Salvar'" (onClick)="salvar()"></app-button>
+    </div>
+  </div>
+
+</div>

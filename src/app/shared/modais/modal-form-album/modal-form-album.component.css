@@ -1,0 +1,19 @@
+.container-album{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80vh;
+  height: 85vh;
+}
+
+.imagens{
+  max-width: 70vh;
+  border: solid 1px #c4c4c4;
+}
+
+.container-btn{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}

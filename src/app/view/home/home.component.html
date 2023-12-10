@@ -22,7 +22,10 @@
       </div>
 
     </div>
-    <div class="add-galery"></div>
+    <div class="add-galery">
+      <span [style.font-size]="'14px'" [style.font-weight]="'600'">Crie seu álbum de fotografias</span>
+      <app-button [classe]="'btn-add-photo'" [icone]="'add_a_photo'" [iconeSize]="'100px'" (onClick)="criarAlbum()"></app-button>
+    </div>
   </div>
 
   <mat-divider [style.margin]="'0px 20px'"></mat-divider>

@@ -206,3 +206,20 @@ html{
   font-size: 14px;
   font-weight: 600;
 }
+
+.btn-add-photo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: var(--primary);
+  width: 140px;
+  height: 125px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}

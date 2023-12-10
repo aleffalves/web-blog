@@ -36,6 +36,7 @@ import { CardPostComponent } from './components/card-post/card-post.component';
 import { ModalConfirmacaoComponent } from './shared/modais/modal-confirmacao/modal-confirmacao.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalPostDetalheComponent } from './shared/modais/modal-post-detalhe/modal-post-detalhe.component';
+import { ModalFormAlbumComponent } from './shared/modais/modal-form-album/modal-form-album.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ModalPostDetalheComponent } from './shared/modais/modal-post-detalhe/mo
     PostComponent,
     CardPostComponent,
     ModalConfirmacaoComponent,
-    ModalPostDetalheComponent
+    ModalPostDetalheComponent,
+    ModalFormAlbumComponent
   ],
   imports: [
     BrowserModule,
