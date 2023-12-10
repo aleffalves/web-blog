@@ -1,3 +1,4 @@
+import { Page } from './../../shared/model/page.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmacaoComponent } from 'src/app/shared/modais/modal-confirmacao/modal-confirmacao.component';
@@ -14,7 +15,11 @@ import { PostService } from 'src/app/shared/service/post.service';
 export class PostComponent implements OnInit {
 
   @Input() posts ?: Post[] = new Array()
+  @Input() totalPages : number = 0;
+
   idUsuarioLogado ?: number
+  page : number = 0;
+  limit : number = 5;
 
   constructor(
     private postService : PostService,
@@ -24,6 +29,17 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.idUsuarioLogado = this.authService.getDecodedToken().id
+  }
+
+  buscarPosts(page : number, limit : number){
+    this.postService.buscarPosts(page, limit).subscribe({
+      next : (posts) => {
+        posts.content?.forEach(p => this.posts?.push(p))
+        this.page = posts.number as number
+        this.limit = posts.size as number
+        this.totalPages = (posts.totalPages as number)-1
+      }
+    })
   }
 
   deletarPost(post : Post){
@@ -38,8 +54,12 @@ export class PostComponent implements OnInit {
     })
   }
 
+  verMais(){
+    this.buscarPosts(this.page+1, this.limit)
+  }
+
   onClick(post : Post){
-    let modal = this.dialog.open(ModalPostDetalheComponent, {
+    this.dialog.open(ModalPostDetalheComponent, {
       data : { post : post}
     })
   }

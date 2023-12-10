@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   posts ?: Post[] = new Array()
 
   publicaoExibida : TipoPublicacao = TipoPublicacao.POST
+  totalPages : number = 0;
 
   constructor(
     private _snackBar: MatSnackBar,
@@ -33,6 +34,7 @@ export class HomeComponent implements OnInit {
     this.postService.buscarPosts(page, limit).subscribe({
       next : (posts) => {
         this.posts = posts.content
+        this.totalPages = posts.totalPages as number
       }
     })
   }
