@@ -15,7 +15,7 @@
           <input matInput type="text" [(ngModel)]="post.titulo">
         </mat-form-field>
       </div>
-      <app-editor (valueChange)="setMensagem($event)"></app-editor>
+      <app-editor (valueChange)="setMensagem($event)" [doc]="doc"></app-editor>
       <div class="container-btn">
         <app-button [classe]="'btn-cancelar'" [texto]="'Cancelar'" (onClick)="cancelarPost()"></app-button>
         <app-button [classe]="'btn-salvar'" [texto]="'Salvar'" (onClick)="salvarPost()"></app-button>

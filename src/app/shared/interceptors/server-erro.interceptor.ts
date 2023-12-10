@@ -52,7 +52,7 @@ export class ServerErrorInterceptor implements HttpInterceptor {
   }
 
   openSnackBar(mensagem : string, horizontalPosition ?: MatSnackBarHorizontalPosition , verticalPosition ?: MatSnackBarVerticalPosition   ) {
-    this._snackBar.open(mensagem, 'OK', {
+    this._snackBar.open(mensagem, 'ERRO', {
       horizontalPosition : horizontalPosition ? horizontalPosition : 'center' as MatSnackBarHorizontalPosition ,
       verticalPosition: verticalPosition ? verticalPosition : 'bottom' as MatSnackBarVerticalPosition ,
     });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { toDoc } from 'ngx-editor';
 import { Post } from 'src/app/shared/model/post.model';
 import { PostService } from 'src/app/shared/service/post.service';
 
@@ -11,6 +12,7 @@ import { PostService } from 'src/app/shared/service/post.service';
 export class HomeComponent implements OnInit {
 
   post : Post = new Post() ;
+  doc !: object;
 
   constructor(
     private _snackBar: MatSnackBar,
@@ -33,6 +35,7 @@ export class HomeComponent implements OnInit {
 
   cancelarPost(){
     this.post = new Post()
+    this.doc = toDoc('')
   }
 
   salvarPost(){
@@ -44,6 +47,7 @@ export class HomeComponent implements OnInit {
       next : (post) => {
         this.openSnackBar('Post salvo com sucesso.', 'OK')
         this.post = new Post()
+        this.doc = toDoc('')
       }
     })
 

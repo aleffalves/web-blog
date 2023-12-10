@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { Editor, Toolbar, toDoc, toHTML } from 'ngx-editor';
 
 @Component({
@@ -11,8 +10,8 @@ export class EditorComponent implements OnInit, OnDestroy {
   @Input() titulo ?: string
   @Output() valueChange = new EventEmitter<string>();
 
+  @Input() doc !: object
   editor !: Editor;
-  doc !: object;
 
   toolbar: Toolbar = [
     ['bold', 'italic'],
@@ -33,6 +32,10 @@ export class EditorComponent implements OnInit, OnDestroy {
 
   onChange(doc: object) {
     this.valueChange.emit(toHTML(doc));
+  }
+
+  cancelar(){
+   this.doc = toDoc('')
   }
 
   ngOnDestroy(): void {
