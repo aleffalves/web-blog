@@ -6,20 +6,25 @@ import { jwtDecode } from "jwt-decode";
 import { Token } from '../model/token.model';
 import { Login } from '../model/login.model';
 import { DecodedToken } from '../model/decoded-token.model';
+import { Usuario } from '../model/usuario.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  baseUrl ?: string = environment.urlBase
+  urlBase : string = environment.urlBase.concat('/auth')
 
   constructor(
     private http : HttpClient
   ) { }
 
   logar(login : Login) : Observable<Token>{
-    return this.http.post<Token>(`${this.baseUrl}/auth/logar`, login)
+    return this.http.post<Token>(`${this.urlBase}/autenticar`, login)
+  }
+
+  salvarUsuario(usuarioDTO : Usuario) : Observable<Usuario>{
+    return this.http.post<Usuario>(`${this.urlBase}/cadastrar`, usuarioDTO)
   }
 
   getAuthToken() {

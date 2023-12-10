@@ -1,8 +1,6 @@
-import { PublicService } from './../../shared/service/public.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { Login } from 'src/app/shared/model/login.model';
-import { Token } from 'src/app/shared/model/token.model';
 import { Usuario } from 'src/app/shared/model/usuario.model';
 import { AuthService } from 'src/app/shared/service/auth.service';
 
@@ -24,7 +22,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService : AuthService,
     private _snackBar: MatSnackBar,
-    private publicService : PublicService
   ) { }
 
   ngOnInit() {
@@ -40,7 +37,7 @@ export class LoginComponent implements OnInit {
 
   cadastrar(){
     if(!this.usuarioValido()) return
-    this.publicService.salvarUsuario(this.usuario).subscribe({
+    this.authService.salvarUsuario(this.usuario).subscribe({
       next : (usuario) => {
         this.usuario = usuario
         this.onClose.emit(true)
