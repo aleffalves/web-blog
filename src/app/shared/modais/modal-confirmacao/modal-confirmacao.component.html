@@ -1,0 +1,8 @@
+<div class="container-modal">
+  <span [style.font-size]="'26px'">{{titulo}}</span>
+  <span *ngIf="mensagem" [style.font-size]="'18px'">{{mensagem}}</span>
+  <div style="width: 100%; display: flex; gap: 10px;">
+    <app-button style="width: 100%;" [classe]="'btn-cancelar'" [width]="'100%'" [texto]="'Não'"  (onClick)="salvar(false)"></app-button>
+    <app-button style="width: 100%;" [classe]="'btn-salvar'" [width]="'100%'" [texto]="'Sim'"  (onClick)="salvar(true)"></app-button>
+  </div>
+</div>

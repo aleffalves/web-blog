@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   logar(){
     this.authService.logar(this.login).subscribe({
       next : (token) => {
-        this.onClose.emit(true)
+        location.reload()
       }
     })
   }

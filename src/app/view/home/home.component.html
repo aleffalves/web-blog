@@ -15,7 +15,7 @@
           <input matInput type="text" [(ngModel)]="post.titulo">
         </mat-form-field>
       </div>
-      <app-editor (valueChange)="setMensagem($event)" [doc]="doc"></app-editor>
+      <app-editor (valueChange)="setMensagem($event)" [doc]="doc" [disabled]="false" [maxHeight]="'400px'"></app-editor>
       <div class="container-btn">
         <app-button [classe]="'btn-cancelar'" [texto]="'Cancelar'" (onClick)="cancelarPost()"></app-button>
         <app-button [classe]="'btn-salvar'" [texto]="'Salvar'" (onClick)="salvarPost()"></app-button>
@@ -28,10 +28,12 @@
   <mat-divider [style.margin]="'0px 20px'"></mat-divider>
 
   <div class="container-publicacoes">
-    <mat-button-toggle-group>
-      <mat-button-toggle [style.width]="'50%'" value="bold">POSTS</mat-button-toggle>
-      <mat-button-toggle [style.width]="'50%'"  value="italic">ÁLBUNS</mat-button-toggle>
+    <mat-button-toggle-group [(ngModel)]="publicaoExibida">
+      <mat-button-toggle [style.width]="'50%'" [value]="POST">POSTS</mat-button-toggle>
+      <mat-button-toggle [style.width]="'50%'"  [value]="ALBUM">ÁLBUNS</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
+
+  <div [style.width]="'100%'" *ngIf="publicaoExibida == POST"><app-post [posts]="posts"></app-post></div>
 
 </div>

@@ -1,10 +1,9 @@
-<div class="container">
-	<h2 *ngIf="titulo" class="title">{{titulo}}</h2>
+<div class="container" [style.max-height]="maxHeight">
+	<h2 *ngIf="titulo" class="title" [style.margin]="'0px'">{{titulo}}</h2>
 	<div class="content">
-			<div class="editor">
-				<ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
-				</ngx-editor-menu>
-				<ngx-editor [editor]="editor" [ngModel]="doc" [placeholder]="'Seus pensamentos aqui...'" (ngModelChange)="onChange($event)" >
+			<div class="editor" [style.height]="height" [style.max-height]="height" [style.border]="border">
+				<ngx-editor-menu *ngIf="showToolbar" [editor]="editor" [toolbar]="toolbar "></ngx-editor-menu>
+				<ngx-editor [editor]="editor" [ngModel]="doc" [disabled]="disabled" [placeholder]="'Seus pensamentos aqui...'" (ngModelChange)="onChange($event)" >
 				</ngx-editor>
 			</div>
 	</div>

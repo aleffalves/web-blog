@@ -1,0 +1,3 @@
+<div class="container-post">
+  <app-card-post *ngFor="let post of posts" [post]="post" [idUsuarioLogado]="idUsuarioLogado" (deletarPostEmit)="deletarPost($event)" (onClickEmit)="onClick($event)"></app-card-post>
+</div>

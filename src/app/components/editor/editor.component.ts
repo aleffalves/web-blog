@@ -8,6 +8,12 @@ import { Editor, Toolbar, toDoc, toHTML } from 'ngx-editor';
 })
 export class EditorComponent implements OnInit, OnDestroy {
   @Input() titulo ?: string
+  @Input() value ?: string
+  @Input() disabled : boolean = true
+  @Input() showToolbar : boolean = true
+  @Input() height ?: string
+  @Input() maxHeight ?: string
+  @Input() border ?: string
   @Output() valueChange = new EventEmitter<string>();
 
   @Input() doc !: object
@@ -28,6 +34,7 @@ export class EditorComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.editor = new Editor();
+    this.value ? this.doc = toDoc(this.value) : this.doc = toDoc('')
   }
 
   onChange(doc: object) {

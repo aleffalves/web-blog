@@ -36,6 +36,7 @@ export class ToolbarComponent implements OnInit {
 
   logout(){
     this.authService.logOut()
+    location.reload()
   }
 
 }

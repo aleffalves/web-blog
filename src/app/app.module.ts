@@ -31,6 +31,11 @@ import { ModalLoginComponent } from './shared/modais/modal-login/modal-login.com
 import { LoginComponent } from './view/login/login.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { LoadingComponent } from './components/loading/loading.component';
+import { PostComponent } from './view/post/post.component';
+import { CardPostComponent } from './components/card-post/card-post.component';
+import { ModalConfirmacaoComponent } from './shared/modais/modal-confirmacao/modal-confirmacao.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalPostDetalheComponent } from './shared/modais/modal-post-detalhe/modal-post-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,11 @@ import { LoadingComponent } from './components/loading/loading.component';
     EditorComponent,
     ModalLoginComponent,
     LoginComponent,
-    LoadingComponent
+    LoadingComponent,
+    PostComponent,
+    CardPostComponent,
+    ModalConfirmacaoComponent,
+    ModalPostDetalheComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +76,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     MatDividerModule,
     MatSnackBarModule,
     DialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },

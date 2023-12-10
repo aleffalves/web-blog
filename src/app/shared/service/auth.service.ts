@@ -47,7 +47,10 @@ export class AuthService {
   }
 
   getDecodedToken(): DecodedToken {
-    return jwtDecode(this.getAuthToken() as string);
+    if(this.getAuthToken()){
+      return jwtDecode(this.getAuthToken() as string);
+    }
+    return new DecodedToken()
   }
 
 }

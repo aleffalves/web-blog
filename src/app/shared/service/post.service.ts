@@ -22,7 +22,12 @@ export class PostService {
     let params = new HttpParams()
     params = params.append('page', page)
     params = params.append('limit', limit)
-    return this.http.get<Page>(`${this.urlBase}/post`, {params : params})
+    return this.http.get<Page>(`${this.urlBase}`, {params : params})
   }
+
+  deletar(id : number) : Observable<void>{
+    return this.http.delete<void>(`${this.urlBase}/${id}`)
+  }
+
 
 }

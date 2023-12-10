@@ -1,0 +1,11 @@
+.container-modal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  min-height: 100px;
+  padding: 30px;
+  background: white;
+  gap: 20px;
+}

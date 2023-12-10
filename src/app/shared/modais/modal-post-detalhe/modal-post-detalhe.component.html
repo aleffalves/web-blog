@@ -1,0 +1,33 @@
+<div class="container-detalhes">
+  <div [style.padding]="'30px'">
+    <app-editor [titulo]="post?.titulo" [value]="post?.mensagem" [disabled]="true" [showToolbar]="false" [height]="'100%'" [maxHeight]="'100%'" [border]="'none'" ></app-editor>
+  </div>
+
+  <div class="container-comentario" >
+    <h3>Comentários</h3>
+
+    <div class="div-comentario">
+
+      <div style="display: flex; flex-direction: column; gap: 5px; overflow: auto;padding: 6px;">
+        <div *ngFor="let comentario of post?.comentarios" class="card-comentario">
+          <div style="display: flex; flex-direction: row; padding: 5px; align-items: center; justify-content: space-between;">
+            <div style="display: flex; flex-direction: row; font-weight: 600; gap:10px">
+              <span>{{comentario.usuarioCriacao?.nome}}</span>
+              <span>{{comentario.dataCriacao | date : 'dd/MM/yyyy H:mm:ss'}}</span>
+            </div>
+            <app-button *ngIf="usuarioLogado?.id == comentario.usuarioCriacao?.id" [classe]="'btn-icon'" [color]="'var(--primary)'" [iconeSize]="'20px'" [icone]="'delete_forever'" (onClick)="deletar(comentario)"></app-button>
+          </div>
+
+          <span [style.padding]="'0px 6px 6px 6px'">{{comentario.mensagem}}</span>
+        </div>
+      </div>
+
+
+      <div class="form-comentario">
+        <textarea  [style.width]="'100%'" matInput placeholder="Escreva seu comentário" [(ngModel)]="comentario.mensagem"></textarea>
+        <app-button [classe]="'btn-salvar'" [width]="'120px'" [texto]="'Enviar'" (onClick)="salvar()"></app-button>
+      </div>
+
+    </div>
+  </div>
+</div>
