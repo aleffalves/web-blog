@@ -28,8 +28,8 @@ export class ModalFormAlbumComponent implements OnInit {
   }
 
   selectFiles(event: any): void {
-    this.selectedFiles = event.target.files;
 
+    this.selectedFiles = event.target.files;
     this.previews = [];
     if (this.selectedFiles && this.selectedFiles[0]) {
       const numberOfFiles = this.selectedFiles.length;
@@ -63,6 +63,7 @@ export class ModalFormAlbumComponent implements OnInit {
     this.albumService.salvar(this.album).subscribe({
       next : () => {
         this.openSnackBar('Álbum criado com sucesso.', 'OK')
+        location.reload()
         this.dialog.close()
       }
     })

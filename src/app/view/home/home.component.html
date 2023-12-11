@@ -37,6 +37,12 @@
     </mat-button-toggle-group>
   </div>
 
-  <div [style.width]="'100%'" *ngIf="publicaoExibida == POST"><app-post [posts]="posts" [totalPages]="totalPages"></app-post></div>
+  <div [style.width]="'100%'" *ngIf="publicaoExibida == POST">
+    <app-post [posts]="posts" [totalPagesPosts]="totalPagesPosts"></app-post>
+  </div>
+
+  <div [style.width]="'100%'" *ngIf="publicaoExibida == ALBUM">
+    <app-album [albuns]="albuns" [totalPagesAlbuns]="totalPagesAlbuns"></app-album>
+  </div>
 
 </div>

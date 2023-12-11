@@ -1,4 +1,3 @@
-import { Page } from './../../shared/model/page.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmacaoComponent } from 'src/app/shared/modais/modal-confirmacao/modal-confirmacao.component';
@@ -15,7 +14,7 @@ import { PostService } from 'src/app/shared/service/post.service';
 export class PostComponent implements OnInit {
 
   @Input() posts ?: Post[] = new Array()
-  @Input() totalPages : number = 0;
+  @Input() totalPagesPosts : number = 0;
 
   idUsuarioLogado ?: number
   page : number = 0;
@@ -37,7 +36,7 @@ export class PostComponent implements OnInit {
         posts.content?.forEach(p => this.posts?.push(p))
         this.page = posts.number as number
         this.limit = posts.size as number
-        this.totalPages = (posts.totalPages as number)-1
+        this.totalPagesPosts = (posts.totalPages as number)-1
       }
     })
   }
@@ -48,7 +47,7 @@ export class PostComponent implements OnInit {
       next : (res) => {
         if(res){
           this.postService.deletar(post.id).subscribe({})
-          this.posts?.splice(this.posts?.findIndex( p => p = post), 1)
+          this.posts?.splice(this.posts?.findIndex( p => p == post), 1)
         }
       }
     })

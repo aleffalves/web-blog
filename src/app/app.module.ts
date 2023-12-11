@@ -37,6 +37,8 @@ import { ModalConfirmacaoComponent } from './shared/modais/modal-confirmacao/mod
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalPostDetalheComponent } from './shared/modais/modal-post-detalhe/modal-post-detalhe.component';
 import { ModalFormAlbumComponent } from './shared/modais/modal-form-album/modal-form-album.component';
+import { AlbumComponent } from './view/album/album.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { ModalFormAlbumComponent } from './shared/modais/modal-form-album/modal-
     CardPostComponent,
     ModalConfirmacaoComponent,
     ModalPostDetalheComponent,
-    ModalFormAlbumComponent
+    ModalFormAlbumComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,8 @@ import { ModalFormAlbumComponent } from './shared/modais/modal-form-album/modal-
     MatSnackBarModule,
     DialogModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    CarouselModule,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },

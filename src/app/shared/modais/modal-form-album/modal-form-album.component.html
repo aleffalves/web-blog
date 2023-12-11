@@ -1,6 +1,6 @@
 <div class="container-album">
   <div style="display: flex; flex-direction: row; gap: 15px; padding: 30px; align-items: center;">
-    <div class="form" [style.width]="'100%'" >
+    <div class="form" [style.width]="'100%'" [style.max-width]="'350px'" >
       <span [style.font-size]="'14px'" [style.font-weight]="'600'">Nome do Álbum</span>
       <mat-form-field appearance="outline">
         <input matInput type="text" [(ngModel)]="album.nome">
