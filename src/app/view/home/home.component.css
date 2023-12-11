@@ -1,0 +1,61 @@
+.container-home{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.container-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: var(--primary);
+  font-weight: 500;
+  gap: 10px;
+  padding: 10px;
+}
+
+.container-posts{
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  padding: 20px;
+  gap: 10px
+}
+
+.add-post{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  min-width: 400px;
+  gap: 10px;
+}
+
+.add-galery{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  gap: 20px;
+}
+
+.container-btn{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.container-publicacoes{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+::ng-deep .container-publicacoes .mat-button-toggle-appearance-standard .mat-button-toggle-label-content{
+  line-height: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  width: 100%;
+}

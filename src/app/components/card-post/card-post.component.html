@@ -1,0 +1,10 @@
+<div class="container-card">
+  <div class="container-publicador">
+    <span>{{post?.usuarioCriacao?.nome}} {{post?.usuarioCriacao?.sobrenome}}</span>
+    <span>{{post?.dataCriacao | date : 'dd/MM/yyyy H:mm:ss'}}</span>
+    <app-button *ngIf="idUsuarioLogado == post?.usuarioCriacao?.id" [classe]="'btn-icon'" [color]="'var(--primary)'" [icone]="'delete_forever'" (onClick)="deletar()"></app-button>
+  </div>
+  <div (click)="onClick()" [style.padding]="'1%'">
+    <app-editor [titulo]="post?.titulo" [value]="post?.mensagem" [disabled]="true" [showToolbar]="false" [height]="'100px'" [border]="'none'" ></app-editor>
+  </div>
+</div>

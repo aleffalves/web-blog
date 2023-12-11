@@ -1,0 +1,8 @@
+mat-toolbar{
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  color: var(--primary);
+  background: var(--secundary);
+  font-weight: 500;
+}

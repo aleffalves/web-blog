@@ -1,0 +1,48 @@
+<div class="container-home">
+
+  <div class="container-titulo">
+    <span>Compartilhe seus pensamentos...</span>
+    <app-button [classe]="'btn-icon'" [icone]="'light_mode'" [iconeSize]="'36px'" [color]="'var(----primary)'"></app-button>
+  </div>
+
+  <mat-divider [style.margin]="'0px 20px'"></mat-divider>
+
+  <div class="container-posts">
+    <div class="add-post">
+      <div class="form">
+        <span [style.font-size]="'14px'" [style.font-weight]="'600'">Titulo</span>
+        <mat-form-field appearance="outline" [style.width]="'50%'">
+          <input matInput type="text" [(ngModel)]="post.titulo">
+        </mat-form-field>
+      </div>
+      <app-editor (valueChange)="setMensagem($event)" [doc]="doc" [disabled]="false" [maxHeight]="'400px'"></app-editor>
+      <div class="container-btn">
+        <app-button [classe]="'btn-cancelar'" [texto]="'Cancelar'" (onClick)="cancelarPost()"></app-button>
+        <app-button [classe]="'btn-salvar'" [texto]="'Salvar'" (onClick)="salvarPost()"></app-button>
+      </div>
+
+    </div>
+    <div class="add-galery">
+      <span [style.font-size]="'14px'" [style.font-weight]="'600'">Crie seu álbum de fotografias</span>
+      <app-button [classe]="'btn-add-photo'" [icone]="'add_a_photo'" [iconeSize]="'100px'" (onClick)="criarAlbum()"></app-button>
+    </div>
+  </div>
+
+  <mat-divider [style.margin]="'0px 20px'"></mat-divider>
+
+  <div class="container-publicacoes">
+    <mat-button-toggle-group [(ngModel)]="publicaoExibida">
+      <mat-button-toggle [style.width]="'50%'" [value]="POST">POSTS</mat-button-toggle>
+      <mat-button-toggle [style.width]="'50%'"  [value]="ALBUM">ÁLBUNS</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div [style.width]="'100%'" *ngIf="publicaoExibida == POST">
+    <app-post [posts]="posts" [totalPagesPosts]="totalPagesPosts"></app-post>
+  </div>
+
+  <div [style.width]="'100%'" *ngIf="publicaoExibida == ALBUM">
+    <app-album [albuns]="albuns" [totalPagesAlbuns]="totalPagesAlbuns"></app-album>
+  </div>
+
+</div>

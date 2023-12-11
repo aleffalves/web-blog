@@ -1,1 +1,225 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+
+html, body { height: 100%;  font-family: 'Montserrat' !important; }
+body { margin: 0;  font-family: 'Montserrat' !important;}
+
+:root {
+  --primary: #FF7246;
+  --primary-text: #FFFFFF;
+  --secundary: #2B2B2B;
+  --secundary-text: #FFFFFF;
+  --auxiliar: #E5E5E5;
+  --auxiliar-text: #2B2B2B;
+  --error: #F81D00;
+  --verde-padrao: #61B460;
+  --vermelho-padrao: #C60000;
+}
+
+html{
+  --mdc-checkbox-selected-focus-state-layer-color: var(--secundary) !important;
+  --mdc-checkbox-selected-hover-state-layer-color: var(--secundary) !important;
+  --mdc-checkbox-selected-pressed-state-layer-color: var(--secundary) !important;
+  --mdc-checkbox-selected-focus-icon-color: var(--secundary) !important;
+  --mdc-checkbox-selected-hover-icon-color: var(--secundary) !important;
+  --mdc-checkbox-selected-icon-color: var(--secundary) !important;
+  --mdc-checkbox-selected-pressed-icon-color: var(--secundary) !important;
+  --mdc-checkbox-unselected-focus-icon-color: var(--secundary) !important;
+  --mdc-checkbox-unselected: var(--secundary) !important;
+  --mdc-checkbox-unselected-hover-icon-color: var(--secundary) !important;
+  --mdc-checkbox-unselected-focus-state-layer-color:  var(--secundary) !important;
+  --mdc-checkbox-unselected-hover-state-layer-color:  var(--secundary) !important;
+  --mdc-checkbox-unselected-pressed-state-layer-color:  var(--secundary) !important;
+  --mdc-checkbox-disabled-selected-icon-color: var(--secundary) !important;
+  --mat-select-focused-arrow-color: var(--secundary) !important;
+  --mdc-outlined-text-field-focus-outline-color: var(--primary) !important;
+  --mat-option-selected-state-label-text-color: var(--secundary) !important;
+  --mdc-icon-button-state-layer-size: 35px !important;
+  --mat-form-field-subscript-text-line-height: 0px !important;
+  --mat-form-field-container-text-size: 12px !important;
+
+  --mat-legacy-button-toggle-text-color:  var(--secundary) !important;
+  --mat-legacy-button-toggle-state-layer-color:  var(--secundary) !important;
+  --mat-legacy-button-toggle-selected-state-text-color:  var(--secundary) !important;
+  --mat-legacy-button-toggle-selected-state-background-color: var(--primary) !important;
+  --mat-legacy-button-toggle-disabled-state-text-color:  var(--secundary) !important;
+  --mat-legacy-button-toggle-disabled-state-background-color: #eeeeee;
+  --mat-legacy-button-toggle-disabled-selected-state-background-color: var(--primary) !important;
+  --mat-standard-button-toggle-text-color:  var(--secundary) !important;
+  --mat-standard-button-toggle-background-color: white;
+  --mat-standard-button-toggle-state-layer-color:  var(--secundary) !important;
+  --mat-standard-button-toggle-selected-state-background-color: var(--primary) !important;
+  --mat-standard-button-toggle-selected-state-text-color: var(--secundary) !important;
+  --mat-standard-button-toggle-disabled-state-text-color: var(--secundary) !important;
+  --mat-standard-button-toggle-disabled-state-background-color: white;
+  --mat-standard-button-toggle-disabled-selected-state-text-color:  var(--secundary) !important;
+  --mat-standard-button-toggle-disabled-selected-state-background-color: var(--primary) !important;
+  --mat-standard-button-toggle-divider-color: #e0e0e0;
+
+  --mdc-tab-indicator-active-indicator-color: var(--primary) !important;
+  --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+  --mat-tab-header-pagination-icon-color: #000;
+  --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-label-text-color: var(--primary) !important;
+  --mat-tab-header-active-ripple-color: var(--primary) !important;
+  --mat-tab-header-inactive-ripple-color: var(--primary) !important;
+  --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-focus-label-text-color: var(--primary) !important;
+  --mat-tab-header-active-hover-label-text-color: var(--primary) !important;
+  --mat-tab-header-active-focus-indicator-color: var(--primary) !important;
+  --mat-tab-header-active-hover-indicator-color: var(--primary) !important;
+
+}
+
+.mat-mdc-snack-bar-container {
+  --mat-snack-bar-button-color: var(--primary) !important;
+}
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: var(--primary) !important;
+  --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+  --mat-tab-header-pagination-icon-color: #000;
+  --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-label-text-color: var(--primary) !important;
+  --mat-tab-header-active-ripple-color: var(--primary) !important;
+  --mat-tab-header-inactive-ripple-color: var(--primary) !important;
+  --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-focus-label-text-color: var(--primary) !important;
+  --mat-tab-header-active-hover-label-text-color: var(--primary) !important;
+  --mat-tab-header-active-focus-indicator-color: var(--primary) !important;
+  --mat-tab-header-active-hover-indicator-color: var(--primary) !important;
+}
+
+.mat-mdc-select{
+  font-size: 12px !important;
+}
+
+.mat-mdc-option{
+  font-size: 12px !important;
+  min-height: 35px !important;
+}
+
+.mat-pseudo-checkbox-checked::after {
+  color: var(--primary) !important;
+}
+
+.mat-mdc-text-field-wrapper{
+  height: 35px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.mat-mdc-button-base {
+  width: 35px !important;
+  height: 35px !important;;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.mat-mdc-form-field-bottom-align::before {
+  height: 0px !important;
+}
+
+.mat-mdc-header-row{
+  font-family: 'Segoe UI' !important;
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  font-size: 14px !important;
+  height: 40px !important;
+  border-bottom: 2px solid var(--secundary);
+}
+
+.mat-mdc-cell{
+  font-family: 'Segoe UI' !important;
+  font-size: 11px !important;
+  height: 45px !important;
+}
+
+.mat-mdc-table thead,.mat-mdc-header-cell:first-child{
+  border-top-left-radius: 10px !important;
+}
+
+.mat-mdc-table thead,.mat-mdc-header-cell:last-child{
+  border-top-right-radius: 10px !important;
+}
+
+.mat-mdc-row:nth-child(even){
+  background-color: #f5f4f4 !important;
+}
+
+.mat-mdc-row:nth-child(odd){
+  background-color: white !important;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full, .mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-full{
+  background: var(--secundary);
+}
+
+.mat-mdc-form-field-flex{
+  align-items: unset !important;
+}
+
+.mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input, .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+  height: 100% !important;
+}
+
+/* Botões */
+
+.btn-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn-salvar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 158px;
+  height: 35px;
+  background: var(--verde-padrao);
+  border: 1px solid  var(--verde-padrao);
+  color: #FFF;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-cancelar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 158px;
+  height: 35px;
+  background: #FFF;
+  border: 1px solid var(--vermelho-padrao);
+  color: var(--vermelho-padrao);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-add-photo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: var(--primary);
+  width: 140px;
+  height: 125px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}

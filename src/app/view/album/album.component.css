@@ -1,0 +1,31 @@
+.container-album{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.card-album{
+  width: 100%;
+  height: 300px;
+  border: 1px solid #c4c4c4;
+  cursor: pointer;
+}
+
+.container-publicador{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1%;
+  cursor: auto;
+}
+
+.carrousel{
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

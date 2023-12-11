@@ -1,0 +1,20 @@
+.container-album{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  min-width: 80vw;
+  height: 85vh;
+}
+
+.imagens{
+  max-width: 70vw;
+  border: solid 1px #c4c4c4;
+}
+
+.container-btn{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}

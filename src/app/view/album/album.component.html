@@ -1,0 +1,20 @@
+<div class="container-album">
+
+  <div *ngFor="let album of albuns" class="card-album">
+
+    <div class="container-publicador">
+      <span>{{album?.usuarioCriacao?.nome}} {{album?.usuarioCriacao?.sobrenome}}</span>
+      <span>{{album?.dataCriacao | date : 'dd/MM/yyyy H:mm:ss'}}</span>
+      <app-button *ngIf="idUsuarioLogado == album?.usuarioCriacao?.id" [classe]="'btn-icon'" [color]="'var(--primary)'" [icone]="'delete_forever'" (onClick)="deletar(album)"></app-button>
+    </div>
+
+    <div  style="display: flex; flex-direction: row; gap: 10px; height: 200px; padding: 20px; overflow: auto;" >
+      <div *ngFor="let imagem of album.imagens" style="display: flex; flex-direction: row; gap: 30px;">
+        <img [src]="imagem.byteImagem" style="height: 100%;">
+      </div>
+    </div>
+
+  </div>
+  <app-button *ngIf="page < totalPagesAlbuns" [classe]="'btn-salvar'" [width]="'100%'" [texto]="'Ver Mais'" (onClick)="verMais()"></app-button>
+</div>
+
